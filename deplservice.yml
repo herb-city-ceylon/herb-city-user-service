@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: admin-service-deployment
+  name: user-service-deployment
   labels:
-    app: admin-service
+    app: user-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: admin-service
+      app: user-service
   template:
     metadata:
       labels:
-        app: admin-service 
+        app: user-service
     spec:
       containers:
-      - name: nodeserver
-        image: deshitha/admin-service
-        ports:
-        - containerPort: 7000
+        - name: nodeserver
+          image: sahanrandika/user-service
+          ports:
+            - containerPort: 5000
